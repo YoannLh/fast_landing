@@ -518,3 +518,45 @@ body {
     overflow-x: clip;
   }
 }
+
+/* Compact horizontal step cards on mobile. */
+@media (max-width: 800px) {
+  .how .steps {
+    gap: 12px;
+  }
+  .how .step {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 16px;
+    padding: 20px;
+    min-height: 0;
+    align-content: start;
+  }
+  .how .step-number {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 4px;
+  }
+  .how .step-icon {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    font-size: 30px;
+    border-radius: 12px;
+  }
+  .how .step h3 {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 22px;
+    margin: 0 0 6px;
+  }
+  .how .step p {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
