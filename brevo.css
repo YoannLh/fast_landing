@@ -1,0 +1,15 @@
+/* Only Brevo states and wrappers: the original stylesheet is unchanged. */
+#sib-form .fast-email-block { flex: 1; min-width: 0; }
+#sib-form .entry__field { display: flex; }
+#sib-form .entry__field input { width: 100%; }
+#sib-form .fast-button-block { display: flex; }
+#sib-form .input--hidden { display: none !important; }
+#sib-form .entry__error { display: block; text-align: left; color: #661d1d; font-size: 13px; }
+#sib-form .entry__error:empty { display: none; }
+#sib-form .sib-hide-loader-icon { display: none; }
+#sib-form .progress-indicator__icon { width: 16px; height: 16px; vertical-align: middle; }
+#sib-form button:disabled { cursor: wait; opacity: .7; }
+#sib-form-container .sib-form-message-panel { display: none; max-width: 600px; margin: 16px auto; padding: 12px 16px; border-radius: 8px; }
+#sib-form-container .sib-form-message-panel--active { display: block; }
+#error-message { color: #661d1d; background: #ffeded; }
+#success-message { color: #085229; background: #e7faf0; }

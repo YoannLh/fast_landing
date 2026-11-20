@@ -7,7 +7,9 @@
   --muted: #555;
   --max: 1120px;
 }
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 html {
@@ -63,7 +65,7 @@ input {
 }
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: center;
   gap: 30px;
   min-height: 630px;
@@ -262,7 +264,7 @@ h3 {
 }
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 .step {
@@ -437,5 +439,82 @@ h3 {
   * {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* Allow content to reflow at narrow widths and when the browser zooms. */
+.hero-copy,
+.hero-art,
+.step,
+#sib-form-container,
+#sib-container {
+  min-width: 0;
+}
+.hero-copy,
+.problem,
+.how,
+.waitlist,
+.site-header,
+.footer {
+  overflow-wrap: anywhere;
+}
+.site-header,
+.footer {
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+.button {
+  max-width: 100%;
+  justify-content: center;
+  gap: clamp(12px, 5vw, 40px);
+}
+.button span {
+  flex-shrink: 0;
+}
+/* Clip only decorative overflow; keep page content and pinch zoom available. */
+.hero-art {
+  clip-path: inset(-80px 0);
+}
+@media (max-width: 480px) {
+  .signup-form button {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  /* Prevent iOS from automatically zooming when the email field receives focus. */
+  .signup-form input {
+    font-size: 16px;
+  }
+}
+@media (max-width: 320px) {
+  .problem h2,
+  .how h2,
+  .waitlist h2 {
+    font-size: clamp(28px, 12.5vw, 40px);
+  }
+  .step {
+    padding: 20px;
+  }
+  .hero-art {
+    min-height: 340px;
+  }
+  .phone {
+    /* A transform alone leaves a 245px layout box in the grid. */
+    width: min(245px, 100%);
+    transform: rotate(7deg) scale(0.68);
+  }
+}
+
+/* Keep transformed artwork out of the document's horizontal scroll area.
+   clip-path changes painting, but does not remove scrollable overflow. */
+html,
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden; /* Fallback for browsers without overflow: clip. */
+}
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
   }
 }

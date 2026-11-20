@@ -2,18 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <meta name="theme-color" content="#FFD600" />
     <meta
       name="description"
-      content="Fast keeps your essential links and contact details ready to share with a QR code. Join the waitlist."
+      content="fast keeps your essential links and contact details ready to share with a QR code. Join the waitlist."
     />
-    <title>Fast — One scan away</title>
+    <title>fast — One scan away</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="brevo.css" />
   </head>
   <body>
     <header class="site-header container">
-      <a href="#" class="brand" aria-label="Fast home">fast<span>.</span></a>
+      <a href="#" class="brand" aria-label="fast home">fast<span>.</span></a>
       <a class="header-link" href="#waitlist"
         >Join the waitlist <span aria-hidden="true">↗</span></a
       >
@@ -36,7 +37,7 @@
         </div>
         <div
           class="hero-art"
-          aria-label="Concept illustration of the Fast mobile app"
+          aria-label="Concept illustration of the fast mobile app"
         >
           <span class="orbit orbit-one" aria-hidden="true"></span>
           <span class="orbit orbit-two" aria-hidden="true"></span>
@@ -80,7 +81,7 @@
           <h2>Stop searching.<br /><span>Start sharing.</span></h2>
           <p>
             No more digging through apps, copying links or typing contact
-            details. Fast makes sharing effortless.
+            details. fast makes sharing effortless.
           </p>
           <strong>One wallet. Endless possibilities.</strong>
         </div>
@@ -88,7 +89,7 @@
       <section class="how section-pad container" aria-labelledby="how-title">
         <p class="eyebrow center">SIMPLE BY DESIGN</p>
         <h2 id="how-title" class="center">
-          How Fast works<span class="orange">.</span>
+          How fast works<span class="orange">.</span>
         </h2>
         <div class="steps">
           <article class="step">
@@ -116,39 +117,66 @@
       <section id="waitlist" class="waitlist section-pad">
         <div class="container narrow center">
           <p class="eyebrow">BE FIRST IN LINE</p>
-          <h2>Something <em>Fast</em><br />is coming.</h2>
+          <h2>Something <em>fast</em><br />is coming.</h2>
           <p>
-            Fast is taking shape. Join the early access list and be among the
+            fast is taking shape. Join the early access list and be among the
             first to discover it.
           </p>
-          <!-- Replace the form action with your email collection provider's endpoint. -->
+          <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="sib-form-message-panel" role="alert">
+            <span class="sib-form-message-panel__inner-text">Something went wrong. Please try again.</span>
+          </div>
+          <div id="success-message" class="sib-form-message-panel" role="status">
+            <span class="sib-form-message-panel__inner-text">You're on the list! ⚡ Welcome to fast.</span>
+          </div>
+          <div id="sib-container">
           <form
             class="signup-form"
-            action="#"
+            id="sib-form"
+            action="https://f39fe23b.sibforms.com/serve/MUIFAGNTxO6gvQckHrLYduoMX47GDW1ALfqNH4Bc0dUykurxopUotQVyzA_L8gZDEARvJUKr6g3hJ9aRdfpk5iKOK7AcMn_qwTBj7BTTvCdJ1QPqnd-EiNWW4VzkHtPPBcbjFxrAxdxwjF1oT0R19hq7XX0qNieq8u_Kub_DzIpUEG8rHA21n_yK0k8EU3zynHY21HUwjavnwMygxA=="
             method="post"
-            onsubmit="return false"
+            data-type="subscription"
           >
-            <label class="sr-only" for="email">Your email address</label>
+            <div class="sib-input sib-form-block fast-email-block">
+            <div class="form__entry entry_block">
+            <div class="form__label-row">
+            <label class="sr-only entry__label" for="EMAIL">Your email address</label>
+            <div class="entry__field">
             <input
-              id="email"
-              name="email"
+              class="input"
+              id="EMAIL"
+              name="EMAIL"
+              data-required="true"
               type="email"
               autocomplete="email"
               placeholder="Your email address"
               required
             />
-            <button type="submit">
+            </div>
+            </div>
+            <label class="entry__error entry__error--primary" aria-live="polite"></label>
+            </div>
+            </div>
+            <div class="sib-form-block fast-button-block">
+            <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="42 15" /></svg>
               Join the waitlist <span aria-hidden="true">↗</span>
             </button>
+            </div>
+            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="locale" value="en">
           </form>
-          <p class="form-note">No spam. Just updates about Fast.</p>
-          <p class="form-note">Email signup will be available soon.</p>
+          </div>
+          </div>
+          <p class="form-note">No spam. Just updates about fast.</p>
         </div>
       </section>
     </main>
     <footer class="footer container">
       <a class="brand" href="#">fast<span>.</span></a
-      ><small>© 2026 Fast. Made to share.</small>
+      ><small>© 2026 fast. Made to share.</small>
     </footer>
+    <script src="brevo-config.js"></script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
   </body>
 </html>
