@@ -560,3 +560,22 @@ body {
     line-height: 1.5;
   }
 }
+
+/* SVG arrows for the three waitlist calls to action. */
+.waitlist-arrow {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.waitlist-arrow .arrow-up-right {
+  display: block;
+  flex-shrink: 0;
+}
+.header-link {
+  display: inline-flex;
+  align-items: center;
+}
+.signup-form button .waitlist-arrow {
+  margin-left: 8px;
+}
